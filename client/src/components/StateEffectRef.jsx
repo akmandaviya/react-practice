@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react"
+import { CounterContext } from "./context/context"
+import NavBar from "./context/NavBar"
 
 const StateEffectRef = () => {
     const [count, setCount] = useState(0)
@@ -11,19 +13,19 @@ const StateEffectRef = () => {
         alert(nameRef.current.value)
     }
 
-    useEffect(() => {
-       const interval = setInterval(() => { 
-            setTimer(prev => {
-                if(prev === 10) { 
-                    alert('Timer Up !!!')
-                    return 0
-                }
-                return prev + 1
-            })
-       },1000)
+    // useEffect(() => {
+    //    const interval = setInterval(() => { 
+    //         setTimer(prev => {
+    //             if(prev === 10) { 
+    //                 alert('Timer Up !!!')
+    //                 return 0
+    //             }
+    //             return prev + 1
+    //         })
+    //    },1000)
 
-       return () => clearInterval(interval)
-    },[])
+    //    return () => clearInterval(interval)
+    // },[])
 
     useEffect(() => { 
         fetch("https://jsonplaceholder.typicode.com/users")
@@ -39,16 +41,19 @@ const StateEffectRef = () => {
     }
 
     return (
-        <>
+        <>  
             <h2> Use State, Use Effect and Use Ref</h2>
-            <div style={{ background: "pink", padding: "10px" }}>
-                <h4>timer</h4>
-                <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-                    <button style={{ cursor: "pointer" }} onClick={() => setCount(count + 1)}>Increment</button>
-                    Count is: {count}
-                    <button style={{ cursor: "pointer" }} onClick={() => decrementCount()}>Decrement</button>
+            <CounterContext.Provider value={{count, setCount}}>
+                <NavBar/>
+                <div style={{ background: "pink", padding: "10px" }}>
+                    <h4>timer</h4>
+                    <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+                        <button style={{ cursor: "pointer" }} onClick={() => setCount(count + 1)}>Increment</button>
+                        Count is: {count}
+                        <button style={{ cursor: "pointer" }} onClick={() => decrementCount()}>Decrement</button>
+                    </div>
                 </div>
-            </div>
+            </CounterContext.Provider>
 
             <div style={{ background: "pink", padding: "10px", marginTop: "20px" }}>
                 <h4>Timer</h4>

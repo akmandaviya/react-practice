@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react"
 import { CounterContext } from "./context/context"
 import NavBar from "./context/NavBar"
 
@@ -32,6 +32,11 @@ const StateEffectRef = () => {
             .then(res => res.json())
             .then(data => setUser(data))
     },[])
+
+    // Similar to useEffect but runs before browser paint.
+    useLayoutEffect(() => { 
+         console.log("Runs before paint");
+    }, [ ])
 
     const decrementCount = () => {
         if (count === 0) {

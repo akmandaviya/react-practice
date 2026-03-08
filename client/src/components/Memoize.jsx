@@ -64,3 +64,8 @@ const Memoize = () => {
 }
 
 export default Memoize
+
+// Used to memoize expensive calculations.
+// Filtering large lists
+// Sorting big arrays
+// Expensive calculations

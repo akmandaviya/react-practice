@@ -13,19 +13,19 @@ const StateEffectRef = () => {
         alert(nameRef.current.value)
     }
 
-    useEffect(() => {
-       const interval = setInterval(() => { 
-            setTimer(prev => {
-                if(prev === 10) { 
-                    alert('Timer Up !!!')
-                    return 0
-                }
-                return prev + 1
-            })
-       },1000)
+    // useEffect(() => {
+    //    const interval = setInterval(() => { 
+    //         setTimer(prev => {
+    //             if(prev === 10) { 
+    //                 alert('Timer Up !!!')
+    //                 return 0
+    //             }
+    //             return prev + 1
+    //         })
+    //    },1000)
 
-       return () => clearInterval(interval)
-    },[])
+    //    return () => clearInterval(interval)
+    // },[])
 
     useEffect(() => { 
         fetch("https://jsonplaceholder.typicode.com/users")

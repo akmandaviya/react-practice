@@ -4,7 +4,7 @@ const Memoize = () => {
     const [count, setCount] = useState(0)
 
 
-    // ****expensive operation, calcualtion happeing on every re-render****
+    // ****expensive operation, calcualtion happening on every re-render****
     // const numsArray = new Array(30_000_000).fill(0).map((_, i) => {
     //     return {
     //         index: i,
@@ -44,6 +44,12 @@ const Memoize = () => {
             )
         }
     }
+
+    //finding lucky number index from huge array of data
+    const data = useMemo(() => {
+        return nums.filter( item => item.isLuckyNum === true)
+    }, [nums])
+    console.log(data)
 
     return (
         <div>

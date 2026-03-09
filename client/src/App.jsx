@@ -4,6 +4,7 @@ import ReducerParent from './components/Reducer/ReducerParent'
 import Home from './components/redux/Home'
 import GetPostsData from './components/RTKQuery/GetPostsData'
 import StateEffectRef from './components/StateEffectRef'
+import Basics from './components/Basics/Basics'
 
 function App() {
 
@@ -14,7 +15,8 @@ function App() {
       {/* <CallBackParent/> */}
       {/* <ReducerParent/> */}
       {/* <Home/> */}
-      <GetPostsData/>
+      {/* <GetPostsData/> */}
+      <Basics/>
     </>
   )
 }

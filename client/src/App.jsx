@@ -5,6 +5,7 @@ import Home from './components/redux/Home'
 import GetPostsData from './components/RTKQuery/GetPostsData'
 import StateEffectRef from './components/StateEffectRef'
 import Basics from './components/Basics/Basics'
+import HomeThunk from './components/Thunk/HomeThunk'
 
 function App() {
 
@@ -16,7 +17,8 @@ function App() {
       {/* <ReducerParent/> */}
       {/* <Home/> */}
       {/* <GetPostsData/> */}
-      <Basics/>
+      {/* <Basics/> */}
+      <HomeThunk/>
     </>
   )
 }

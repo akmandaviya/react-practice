@@ -76,29 +76,33 @@ const Basics = () => {
 
             <div>
                 <h2> api data in table </h2>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                        </tr>
-
-                    </thead>
-                    <tbody>
-                        {users.map(item => (
-                            <tr key={item.id}>
-                                <td>{item.id}</td>
-                                <td>{item.name}</td>
-                                <td>{item.email}</td>
-                                <td>{item.phone}</td>
+                {loading ? (
+                    <p>Loading ...</p>
+                ) : (
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
                             </tr>
 
-                        ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {users.map(item => (
+                                <tr key={item.id}>
+                                    <td>{item.id}</td>
+                                    <td>{item.name}</td>
+                                    <td>{item.email}</td>
+                                    <td>{item.phone}</td>
+                                </tr>
+
+                            ))}
+                        </tbody>
+                    </table>
+                )}
+
             </div>
         </div>
     )

@@ -6,6 +6,7 @@ import GetPostsData from './components/RTKQuery/GetPostsData'
 import StateEffectRef from './components/StateEffectRef'
 import Basics from './components/Basics/Basics'
 import HomeThunk from './components/Thunk/HomeThunk'
+import SagaHome from './components/Saga/SagaHome'
 
 function App() {
 
@@ -18,7 +19,8 @@ function App() {
       {/* <Home/> */}
       {/* <GetPostsData/> */}
       {/* <Basics/> */}
-      <HomeThunk/>
+      {/* <HomeThunk/> */}
+      <SagaHome/>
     </>
   )
 }
